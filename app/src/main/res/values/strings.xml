@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SmartButler</string>
+
+    <string name="butler_service">Butler Service</string>
+    <string name="wechat">WeChat</string>
+    <string name="girl">Beauty</string>
+    <string name="user_center">User Center</string>
+    <string name="setting">设置</string>
+</resources>
