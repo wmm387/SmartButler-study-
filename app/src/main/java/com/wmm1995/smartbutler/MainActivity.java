@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.tencent.bugly.crashreport.CrashReport;
 import com.wmm1995.smartbutler.fragment.ButlerFragment;
 import com.wmm1995.smartbutler.fragment.GirlFragment;
 import com.wmm1995.smartbutler.fragment.UserFragment;
