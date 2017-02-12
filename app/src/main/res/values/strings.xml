@@ -6,4 +6,21 @@
     <string name="girl">Beauty</string>
     <string name="user_center">User Center</string>
     <string name="setting">设置</string>
+    <string name="user_name">用户名</string>
+    <string name="user_password">密码</string>
+    <string name="login">登录</string>
+    <string name="sign_up">注册</string>
+    <string name="remember_password">记住密码</string>
+    <string name="forgot_password">忘记密码</string>
+    <string name="age">年龄</string>
+    <string name="introduction">简介(可为空)</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="please_input_again">请再输入一次</string>
+    <string name="email">邮箱</string>
+    <string name="long_text">注册成功需要前往邮箱验证，否则无法登录！</string>
+    <string name="change_password">修改密码</string>
+    <string name="old_pass">旧密码</string>
+    <string name="new_pass">新密码</string>
+    <string name="logining">正在登陆</string>
 </resources>
