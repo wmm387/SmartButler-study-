@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,17 +10,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--android:background="@drawable/user_set_bg"-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center"
+            android:background="@drawable/user_center_bg"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/add_pic"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="100dp"
@@ -129,10 +133,11 @@
             android:layout_marginTop="10dp"/>
 
         <TextView
+            android:id="@+id/tv_courier"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="物流查询"
+            android:text="@string/courier"
             android:textSize="20dp"/>
 
         <View
@@ -144,10 +149,11 @@
             android:background="@color/colorPrimary"/>
 
         <TextView
+            android:id="@+id/tv_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="归属地查询"
+            android:text="@string/phone_adder"
             android:textSize="20dp"/>
 
         <View

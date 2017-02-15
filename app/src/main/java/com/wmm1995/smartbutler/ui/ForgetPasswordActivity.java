@@ -27,7 +27,7 @@ public class ForgetPasswordActivity extends BaseActivity implements View.OnClick
     private EditText et_email,et_now,et_new,et_new_password;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget);
 
@@ -71,7 +71,7 @@ public class ForgetPasswordActivity extends BaseActivity implements View.OnClick
                         }
                     });
                 } else {
-                    Toast.makeText(this, "输入框不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.text_tost_empty, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btn_update_password:
@@ -105,7 +105,7 @@ public class ForgetPasswordActivity extends BaseActivity implements View.OnClick
                         Toast.makeText(this, "两次输入的密码不一致", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(this, "输入框不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.text_tost_empty, Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

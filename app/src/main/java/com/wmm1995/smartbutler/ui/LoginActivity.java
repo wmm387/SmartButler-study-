@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     });
 
                 } else {
-                    Toast.makeText(this, "输入框不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.text_tost_empty, Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

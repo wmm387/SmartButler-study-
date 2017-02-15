@@ -2,20 +2,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.wmm1995.smartbutler">
 
-    <!--读取Log -->
+    <!-- 读取Log -->
     <uses-permission android:name="android.permission.READ_LOGS"/>
-    <!--允许联网 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!--获取GSM（2g）、WCDMA（联通3g）等网络状态的信息  -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!--获取wifi网络状态的信息 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!--保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!--获取sd卡写的权限，用于文件上传和下载-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--允许读取手机状态-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 允许读取手机状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- 允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <!-- 读取联系人权限，上传联系人需要用到此权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- 短信权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <!-- 窗口权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".application.BaseApplication"
@@ -32,33 +45,57 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-
-        <!-- 设置 -->
+        </activity>快递查询页面 --> <!-- 设置 -->
         <activity
             android:name=".ui.SettingActivity"
-            android:label="@string/setting"/>
+            android:label="@string/setting" />
 
         <!-- 闪屏 -->
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
 
         <!-- 引导页 -->
         <activity
             android:name=".ui.GuideActivity"
-            android:theme="@style/NoActionBarFullscreen"/>
+            android:theme="@style/NoActionBarFullscreen" />
 
         <!-- 登录 -->
-        <activity android:name=".ui.LoginActivity"
-            android:label="@string/login"/>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:label="@string/login" />
 
-        <!--注册页面-->
-        <activity android:name=".ui.RegisteredActivity"
-            android:label="@string/sign_up"/>
+        <!-- 注册页面 -->
+        <activity
+            android:name=".ui.RegisteredActivity"
+            android:label="@string/sign_up" />
 
-        <!--忘记密码页面-->
-        <activity android:name=".ui.ForgetPasswordActivity"
-                  android:label="@string/forgot_password"/>
+        <!-- 忘记密码页面 -->
+        <activity
+            android:name=".ui.ForgetPasswordActivity"
+            android:label="@string/forgot_password" />
+        快递查询页面 --
+        >
+        <activity
+            android:name=".ui.CourierActivity"
+            android:label="@string/courier" />
 
+        <!-- 归属地查询页面 -->
+        <activity
+            android:name=".ui.PhoneActivity"
+            android:label="@string/phone_adder" />
+
+        <!-- WEB页面 -->
+        <activity android:name=".ui.WebViewActivity" />
+
+        <!-- 更新页面 -->
+        <activity android:name=".ui.UpdateActivity"
+            android:label="@string/update"/>
+
+        <!-- 短信服务 -->
+        <service
+            android:name=".service.SmsService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>

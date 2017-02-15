@@ -33,7 +33,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     private ImageView ivBack;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
 

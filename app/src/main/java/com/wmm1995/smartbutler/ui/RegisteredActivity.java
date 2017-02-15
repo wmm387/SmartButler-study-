@@ -27,7 +27,7 @@ public class RegisteredActivity extends BaseActivity implements View.OnClickList
     private boolean isGender = true;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registered);
 
@@ -112,7 +112,7 @@ public class RegisteredActivity extends BaseActivity implements View.OnClickList
                     }
 
                 } else {
-                    Toast.makeText(this, "输入框不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.text_tost_empty, Toast.LENGTH_SHORT).show();
                 }
 
                 break;
