@@ -12,8 +12,6 @@ import android.widget.TextView;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-import static com.wmm1995.smartbutler.R.id.profile_image;
-
 /**
  * Created by Administrator on 2017/2/10.
  * 工具统一类

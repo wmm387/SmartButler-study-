@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2017/2/14.
- * 快递查询
+ * 快递查询适配器
  */
 
 public class CourierAdapter extends BaseAdapter{
@@ -23,7 +23,6 @@ public class CourierAdapter extends BaseAdapter{
     private List<CourierData> mList;
     //布局加载器
     private LayoutInflater inflater;
-
     private CourierData data;
 
     public CourierAdapter(Context mContext,List<CourierData> mList) {
@@ -51,7 +50,7 @@ public class CourierAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder viewHolder = null;
+        ViewHolder viewHolder;
         //第一次加载
         if (convertView == null) {
             viewHolder = new ViewHolder();

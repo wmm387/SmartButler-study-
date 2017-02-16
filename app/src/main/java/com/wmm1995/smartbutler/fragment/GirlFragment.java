@@ -1,23 +1,20 @@
 package com.wmm1995.smartbutler.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;
 import com.wmm1995.smartbutler.R;
 import com.wmm1995.smartbutler.adapter.GirlAdapter;
 import com.wmm1995.smartbutler.entity.GirlData;
-import com.wmm1995.smartbutler.utils.PicassoUtils;
-import com.wmm1995.smartbutler.view.CustomDialog;
+import com.wmm1995.smartbutler.ui.GirlActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,12 +25,9 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-import uk.co.senab.photoview.PhotoViewAttacher;
-
 /**
  * Created by Administrator on 2017/2/10.
  * 美女社区
- * TODO:点击图片后跳转到另一个ui，专门显示图片，而不采用dialog
  */
 
 public class GirlFragment extends Fragment {
@@ -41,15 +35,8 @@ public class GirlFragment extends Fragment {
     private GridView mGridView;
     private List<GirlData> mList = new ArrayList<>();
     private GirlAdapter mAdapter;
-
-    //提示框
-    private CustomDialog dialog;
-    //预览图片
-    private ImageView iv_img;
     //图片地址的数据
     private List<String> mListUrl = new ArrayList<>();
-
-    private PhotoViewAttacher mAttacher;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,11 +48,6 @@ public class GirlFragment extends Fragment {
     //初始化
     private void findView(View view) {
         mGridView = (GridView) view.findViewById(R.id.mGridView);
-
-        dialog = new CustomDialog(getActivity(), 0,
-                0, R.layout.dialog_girl,
-                R.style.Transparent, 0,R.style.pop_anim_style);
-        iv_img = (ImageView) dialog.findViewById(R.id.iv_img);
 
         String welfare = null;
         try {
@@ -87,13 +69,10 @@ public class GirlFragment extends Fragment {
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //解析图片
-                PicassoUtils.loadImageView(getActivity(), mListUrl.get(position), iv_img);
-                //缩放
-                mAttacher = new PhotoViewAttacher(iv_img);
-                //刷新
-                mAttacher.update();
-                dialog.show();
+                Intent intent = new Intent(getActivity(),GirlActivity.class);
+                String url = mListUrl.get(position).toString();
+                intent.putExtra("url", url);
+                startActivity(intent);
             }
         });
 

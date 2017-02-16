@@ -2,6 +2,7 @@ package com.wmm1995.smartbutler.entity;
 
 /**
  * Created by Administrator on 2017/2/14.
+ * 微信精选的数据类
  */
 
 public class WeChatData {

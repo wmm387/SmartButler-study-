@@ -55,7 +55,7 @@ public class GirlAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder viewHolder = null;
+        ViewHolder viewHolder;
         if (convertView == null) {
             viewHolder = new ViewHolder();
             convertView = inflater.inflate(R.layout.girl_item, null);
@@ -66,7 +66,7 @@ public class GirlAdapter extends BaseAdapter {
         }
 
         data = mList.get(position);
-        //解析图片、
+        //解析图片
         String url = data.getImgUrl();
         PicassoUtils.loadImageViewSize(mContext,url,width/2,500,viewHolder.imageView);
 

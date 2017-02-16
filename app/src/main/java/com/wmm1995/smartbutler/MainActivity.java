@@ -9,8 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
-import com.tencent.bugly.crashreport.CrashReport;
 import com.wmm1995.smartbutler.fragment.ButlerFragment;
 import com.wmm1995.smartbutler.fragment.GirlFragment;
 import com.wmm1995.smartbutler.fragment.UserFragment;
@@ -20,9 +18,6 @@ import com.wmm1995.smartbutler.ui.SettingActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.attr.fragment;
-import static android.R.attr.settingsActivity;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     //TabLayout
@@ -30,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //ViewPager
     private ViewPager mViewPager;
     //Title
-    private List<String>mTilte;
+    private List<String> mTitle;
     //Fragment
     private List<Fragment>mFragment;
     //FAB
@@ -50,11 +45,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //初始化数据
     private void initData() {
-        mTilte = new ArrayList<>();
-        mTilte.add(getString(R.string.butler_service));
-        mTilte.add(getString(R.string.wechat));
-        mTilte.add(getString(R.string.girl));
-        mTilte.add(getString(R.string.user_center));
+        mTitle = new ArrayList<>();
+        mTitle.add(getString(R.string.butler_service));
+        mTitle.add(getString(R.string.wechat));
+        mTitle.add(getString(R.string.girl));
+        mTitle.add(getString(R.string.user_center));
 
         mFragment = new ArrayList<>();
         mFragment.add(new ButlerFragment());
@@ -82,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
 
+            //第一面由于有输入按钮，所以隐藏fab
             @Override
             public void onPageSelected(int position) {
                 if (position == 0) {
@@ -114,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //设置标题
             @Override
             public CharSequence getPageTitle(int position) {
-                return mTilte.get(position);
+                return mTitle.get(position);
             }
         });
 

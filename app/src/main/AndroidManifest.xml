@@ -45,57 +45,68 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>快递查询页面 --> <!-- 设置 -->
+        </activity>
+        <!-- 设置 -->
         <activity
             android:name=".ui.SettingActivity"
-            android:label="@string/setting" />
+            android:label="@string/setting"/>
 
         <!-- 闪屏 -->
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
 
         <!-- 引导页 -->
         <activity
             android:name=".ui.GuideActivity"
-            android:theme="@style/NoActionBarFullscreen" />
+            android:theme="@style/NoActionBarFullscreen"/>
 
         <!-- 登录 -->
         <activity
             android:name=".ui.LoginActivity"
-            android:label="@string/login" />
+            android:label="@string/login"/>
 
         <!-- 注册页面 -->
         <activity
             android:name=".ui.RegisteredActivity"
-            android:label="@string/sign_up" />
+            android:label="@string/sign_up"/>
 
         <!-- 忘记密码页面 -->
         <activity
             android:name=".ui.ForgetPasswordActivity"
-            android:label="@string/forgot_password" />
+            android:label="@string/forgot_password"/>
         快递查询页面 --
         >
         <activity
             android:name=".ui.CourierActivity"
-            android:label="@string/courier" />
+            android:label="@string/courier"/>
 
         <!-- 归属地查询页面 -->
         <activity
             android:name=".ui.PhoneActivity"
-            android:label="@string/phone_adder" />
+            android:label="@string/phone_adder"/>
 
         <!-- WEB页面 -->
-        <activity android:name=".ui.WebViewActivity" />
+        <activity android:name=".ui.WebViewActivity"/>
 
         <!-- 更新页面 -->
-        <activity android:name=".ui.UpdateActivity"
+        <activity
+            android:name=".ui.UpdateActivity"
             android:label="@string/update"/>
 
         <!-- 短信服务 -->
         <service
             android:name=".service.SmsService"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
         </service>
+
+        <activity android:name=".ui.GirlActivity">
+        </activity>
+        <activity
+            android:name=".ui.AboutActivity"
+            android:theme="@style/AboutAppTheme">
+        </activity>
+        <activity android:name=".Main2Activity">
+        </activity>
     </application>
 
 </manifest>

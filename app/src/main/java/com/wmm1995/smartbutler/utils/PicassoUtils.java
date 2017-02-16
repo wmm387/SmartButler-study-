@@ -6,7 +6,6 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
-import com.wmm1995.smartbutler.R;
 
 /**
  * Created by Administrator on 2017/2/14.

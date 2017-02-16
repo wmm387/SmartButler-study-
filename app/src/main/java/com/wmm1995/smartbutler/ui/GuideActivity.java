@@ -2,7 +2,6 @@ package com.wmm1995.smartbutler.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.wmm1995.smartbutler.MainActivity;
 import com.wmm1995.smartbutler.R;
 
 import java.util.ArrayList;
@@ -105,7 +103,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.btn_start:
             case R.id.iv_back:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 finish();
                 break;
         }

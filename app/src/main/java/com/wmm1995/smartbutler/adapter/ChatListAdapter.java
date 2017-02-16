@@ -14,11 +14,14 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2017/2/13.
+ * 对话适配器
  */
 
 public class ChatListAdapter extends BaseAdapter {
 
+    //左边的type
     public static final int VALUE_LEFT_TEXT = 1;
+    //右边的type
     public static final int VALUE_RIGHT_TEXT = 2;
 
     private Context mContext;
@@ -100,7 +103,7 @@ public class ChatListAdapter extends BaseAdapter {
     //根据数据源的position来返回显示的item
     @Override
     public int getItemViewType(int position) {
-        ChatListData data = mList.get(position);
+        data = mList.get(position);
         int type = data.getType();
         return type;
     }

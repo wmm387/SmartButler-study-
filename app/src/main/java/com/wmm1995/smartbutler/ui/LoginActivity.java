@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wmm1995.smartbutler.Main2Activity;
 import com.wmm1995.smartbutler.MainActivity;
 import com.wmm1995.smartbutler.R;
 import com.wmm1995.smartbutler.entity.MyUser;
@@ -20,9 +21,6 @@ import com.wmm1995.smartbutler.view.CustomDialog;
 
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
-
-import static android.os.Build.VERSION_CODES.M;
-import static com.wmm1995.smartbutler.utils.ShareUtils.getBoolean;
 
 /**
  * 登录页面
@@ -35,6 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText et_name,et_password;
     private CheckBox keep_password;
     private TextView tv_forget;
+    private TextView tv_skip;
 
     //自定义Dialog
     private CustomDialog dialog;
@@ -59,6 +58,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         tv_forget = (TextView) findViewById(R.id.tv_forget);
         tv_forget.setOnClickListener(this);
+        //跳过登录
+        tv_skip = (TextView) findViewById(R.id.tv_skip);
+        tv_skip.setOnClickListener(this);
 
         //自定义dialog
         dialog = new CustomDialog(this, 300, 300, R.layout.dialog_loading, R.style.Theme_dialog,
@@ -118,6 +120,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     Toast.makeText(this, R.string.text_tost_empty, Toast.LENGTH_SHORT).show();
                 }
+                break;
+            case R.id.tv_skip:
+                startActivity(new Intent(this, Main2Activity.class));
                 break;
         }
     }

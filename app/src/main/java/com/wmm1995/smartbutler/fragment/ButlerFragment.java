@@ -75,7 +75,7 @@ public class ButlerFragment extends Fragment implements View.OnClickListener {
         adapter = new ChatListAdapter(getActivity(), mList);
         mChatListView.setAdapter(adapter);
 
-        addLeftItem("你好，我是小管家");
+        addLeftItem(getString(R.string.text_hello_tts));
     }
 
     @Override
@@ -90,12 +90,12 @@ public class ButlerFragment extends Fragment implements View.OnClickListener {
                 if (!TextUtils.isEmpty(text)) {
                     //判断长度不能大于30
                     if (text.length() > 30) {
-                        Toast.makeText(getActivity(), "输入长度超出限制", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), R.string.text_more_length, Toast.LENGTH_SHORT).show();
                     } else {
                         //清空当前输入框
                         et_text.setText("");
                         //添加你输入的内容到right item
-                        addRIghtItem(text);
+                        addRightItem(text);
                         //发送给机器人请求返回内容
                         String url = "http://op.juhe.cn/robot/index?info=" +
                                 text + "&key=" + StaticClass.CHAT_LIST_KEY;
@@ -110,9 +110,8 @@ public class ButlerFragment extends Fragment implements View.OnClickListener {
                         });
                     }
                 } else {
-                    Toast.makeText(getActivity(), "输入框不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.text_tost_empty, Toast.LENGTH_SHORT).show();
                 }
-
                 break;
         }
     }
@@ -151,7 +150,7 @@ public class ButlerFragment extends Fragment implements View.OnClickListener {
     }
 
     //添加右边文本
-    private void addRIghtItem(String text) {
+    private void addRightItem(String text) {
         ChatListData date = new ChatListData();
         date.setType(ChatListAdapter.VALUE_RIGHT_TEXT);
         date.setText(text);
@@ -165,7 +164,7 @@ public class ButlerFragment extends Fragment implements View.OnClickListener {
 
     //开始说话
     private void startSpeak(String text) {
-        //3.开始合成
+        //开始合成
         mTts.startSpeaking(text, mSynListener);
     }
 

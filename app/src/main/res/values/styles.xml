@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AboutAppTheme" parent="Theme.AppCompat.NoActionBar"></style>
+
     <!--全屏主题-->
     <style name="NoActionBarFullscreen" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowNoTitle">true</item>

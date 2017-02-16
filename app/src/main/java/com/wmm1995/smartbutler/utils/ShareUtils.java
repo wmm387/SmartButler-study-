@@ -3,9 +3,6 @@ package com.wmm1995.smartbutler.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import static android.R.attr.key;
-import static android.R.attr.value;
-
 /**
  * Created by Administrator on 2017/2/10.
  */

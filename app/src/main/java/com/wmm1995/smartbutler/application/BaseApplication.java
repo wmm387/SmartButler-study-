@@ -23,7 +23,7 @@ public class BaseApplication extends Application {
         CrashReport.initCrashReport(getApplicationContext(), StaticClass.BUGLY_APP_ID, true);
         //初始化Bmob
         Bmob.initialize(this, StaticClass.BMOB_APP_ID);
-        //
-        SpeechUtility.createUtility(getApplicationContext(), SpeechConstant.APPID +"="+StaticClass.VOICE_KEY);
+        //语音
+        SpeechUtility.createUtility(getApplicationContext(), SpeechConstant.APPID + "=" + StaticClass.VOICE_KEY);
     }
 }

@@ -14,7 +14,6 @@ import com.wmm1995.smartbutler.R;
 import com.wmm1995.smartbutler.utils.L;
 import com.wmm1995.smartbutler.utils.StaticClass;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

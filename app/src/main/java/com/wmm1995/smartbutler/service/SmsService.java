@@ -20,9 +20,6 @@ import com.wmm1995.smartbutler.utils.L;
 import com.wmm1995.smartbutler.utils.StaticClass;
 import com.wmm1995.smartbutler.view.DispatchLinearLayout;
 
-import static android.R.attr.id;
-import static android.os.Build.VERSION_CODES.M;
-
 public class SmsService extends Service implements View.OnClickListener {
 
     private SmsReceiver smsReceiver;

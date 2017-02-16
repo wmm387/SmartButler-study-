@@ -24,7 +24,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.tencent.bugly.crashreport.crash.c.m;
 
 /**
  * Created by Administrator on 2017/2/10.

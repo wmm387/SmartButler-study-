@@ -2,6 +2,7 @@ package com.wmm1995.smartbutler.entity;
 
 /**
  * Created by Administrator on 2017/2/14.
+ * 妹子的实体类
  */
 
 public class GirlData {

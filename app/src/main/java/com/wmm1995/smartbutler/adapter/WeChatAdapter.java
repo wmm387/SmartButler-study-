@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2017/2/14.
- * 微信精选
+ * 微信精选适配器
  */
 
 public class WeChatAdapter extends BaseAdapter {
@@ -57,7 +57,7 @@ public class WeChatAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder viewHolder = null;
+        ViewHolder viewHolder;
         if (convertView == null) {
             viewHolder = new ViewHolder();
             convertView = inflater.inflate(R.layout.wechat_item, null);

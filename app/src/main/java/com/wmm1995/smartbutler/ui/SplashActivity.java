@@ -1,21 +1,16 @@
 package com.wmm1995.smartbutler.ui;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.wmm1995.smartbutler.MainActivity;
 import com.wmm1995.smartbutler.R;
 import com.wmm1995.smartbutler.utils.ShareUtils;
 import com.wmm1995.smartbutler.utils.StaticClass;
 import com.wmm1995.smartbutler.utils.UtilTools;
-
-import static android.graphics.Typeface.createFromAsset;
-import static com.wmm1995.smartbutler.utils.ShareUtils.getBoolean;
 
 /**
  * Created by Administrator on 2017/2/10.
@@ -25,7 +20,7 @@ import static com.wmm1995.smartbutler.utils.ShareUtils.getBoolean;
 public class SplashActivity extends AppCompatActivity {
 
     /**
-     * 1.延时2000ms
+     * 1.延时1000ms
      * 2.判断程序是否第一次运行
      * 3.自定义字体
      * 4.Activity全屏主题
@@ -62,7 +57,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void initView() {
 
-        handler.sendEmptyMessageDelayed(StaticClass.HANDLER_SPLASH, 2000);
+        handler.sendEmptyMessageDelayed(StaticClass.HANDLER_SPLASH, 1000);
         tvSplash = (TextView) findViewById(R.id.tv_splash);
 
         //设置字体

@@ -42,6 +42,8 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
 
     private String url;
 
+    private LinearLayout ll_about;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,9 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
 
         ll_update = (LinearLayout) findViewById(R.id.ll_update);
         ll_update.setOnClickListener(this);
+
+        ll_about = (LinearLayout) findViewById(R.id.ll_about);
+        ll_about.setOnClickListener(this);
 
         tv_version = (TextView) findViewById(R.id.tv_version);
 
@@ -103,6 +108,9 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                     }
                 });
                 break;
+            case R.id.ll_about:
+                startActivity(new Intent(this, AboutActivity.class));
+                break;
         }
     }
 
@@ -134,7 +142,8 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 .setPositiveButton("更新", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(SettingActivity.this, UpdateActivity.class);
+                        Intent intent = new Intent(SettingActivity.this, WebViewActivity.class);
+                        intent.putExtra("title", "下载");
                         intent.putExtra("url", url);
                         startActivity(intent);
                     }

@@ -2,15 +2,12 @@ package com.wmm1995.smartbutler.fragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -115,6 +112,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
 
         //设置具体的值
         MyUser userInfo = BmobUser.getCurrentUser(MyUser.class);
+
         et_username.setText(userInfo.getUsername());
         et_sex.setText(userInfo.isSex() ? "男" : "女");
         et_age.setText(userInfo.getAge()+"");
@@ -163,7 +161,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                     user.setAge(Integer.parseInt(age));
 
                     //性别判断
-                    if (sex.equals("男")) {
+                    if (sex.equals(getString(R.string.male))) {
                         user.setSex(true);
                     } else {
                         user.setSex(false);
@@ -173,7 +171,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                     if (!TextUtils.isEmpty(desc)) {
                         user.setDesc(desc);
                     } else {
-                        user.setDesc("这个人很懒，什么都没有留下！");
+                        user.setDesc(getString(R.string.text_nothing));
                     }
 
                     BmobUser bmobUser = BmobUser.getCurrentUser();
@@ -184,15 +182,15 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                                 //修改成功
                                 setEnable(false);
                                 btn_update_ok.setVisibility(View.GONE);
-                                Toast.makeText(getActivity(), "修改成功", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), R.string.text_editor_success, Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(getActivity(), "修改失败", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), R.string.text_editor_failure, Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
 
                 } else {
-                    Toast.makeText(getActivity(), "输入框不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.text_tost_empty, Toast.LENGTH_SHORT).show();
                 }
                 break;
 

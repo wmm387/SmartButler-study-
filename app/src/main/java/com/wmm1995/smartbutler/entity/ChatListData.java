@@ -1,13 +1,8 @@
 package com.wmm1995.smartbutler.entity;
 
-import android.content.Context;
-
-import com.wmm1995.smartbutler.adapter.ChatListAdapter;
-
-import java.util.List;
-
 /**
  * Created by Administrator on 2017/2/13.
+ * 对话列表实体类
  */
 
 public class ChatListData {
